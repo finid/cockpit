@@ -59,7 +59,7 @@ GOBJECT_INTROSPECTION_CHECK([0.6.2])
 GIO_REQUIREMENT="gio-unix-2.0 >= 2.34"
 SYSTEMD_REQUIREMENT="libsystemd-journal >= 187 libsystemd-daemon"
 JSON_GLIB_REQUIREMENT="json-glib-1.0 >= 0.14.0"
-LIBSSH_REQUIREMENT="libssh >= 0.6.0"
+LIBGSSH_REQUIREMENT="libssh >= 0.6.0 libgssh-1"
 
 dnl Used for anything that just needs gio
 PKG_CHECK_MODULES(GIO, [gio-unix-2.0 >= 2.34.0])
@@ -70,7 +70,7 @@ dnl Our two main binaries
 PKG_CHECK_MODULES(COCKPIT_WS, [$GIO_REQUIREMENT
                                $SYSTEMD_REQUIREMENT
                                $JSON_GLIB_REQUIREMENT
-                               $LIBSSH_REQUIREMENT])
+                               $LIBGSSH_REQUIREMENT])
 
 PKG_CHECK_MODULES(COCKPIT_AGENT, [$GIO_REQUIREMENT
                                   $SYSTEMD_REQUIREMENT
